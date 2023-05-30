@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -24,9 +30,8 @@ a:hover {
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -34,6 +39,11 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  padding-block: 2.5rem;
+}
+
+h2 {
+  padding-block: 1.25rem;
 }
 
 button {
