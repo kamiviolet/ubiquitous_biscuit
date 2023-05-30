@@ -1,0 +1,41 @@
+article {
+    max-width: 750px;
+    padding: 1rem;
+    background-color: lavenderblush;
+    text-align: left;
+    line-height: 1.5;
+    position: relative;
+    box-shadow: gray 0 1px 5px;
+}
+
+article [role="article_body"] {
+    font-size: 1.15em;
+    margin-block: 1rem;
+}
+
+article [role="article_id"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+}
+
+article [role="topic"] {
+    margin-block: .5rem;
+    width: min-content;
+}
+
+article [role="author"] {
+    font-style: unset;
+    font-size: .9em;
+}
+
+article .stat {
+    margin-block: .5rem;
+    text-align: right;
+}
+
+article .created_data {
+    margin-block-start: 1rem;
+    text-align: right;
+}
