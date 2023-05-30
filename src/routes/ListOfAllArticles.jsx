@@ -23,7 +23,7 @@ export default function ListOfAllArticles() {
                 {
                     (!listOfArticles) ? <></>
                     : listOfArticles.map(article => {
-                        return (<li key={article.id} className='article_card'><ArticleSummary article={article}/></li>)
+                        return (<li key={article.article_id} className='article_card'><ArticleSummary article={article}/></li>)
                     })
                 }
             </ul>
