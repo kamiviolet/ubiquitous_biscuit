@@ -6,8 +6,16 @@ import '../css/list_of_articles.css'
 
 export default function ListOfAllArticles() {
     const [listOfArticles, setListOfArticles] = useState([]);
-    useEffect(() => {getAllArticles().then(({articles}) => setListOfArticles(articles))}, []);
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        getAllArticles().then(({articles}) => setListOfArticles(articles)).then(() => setIsLoading(false))
+    }, []);
     
+    if (isLoading) {
+        return  <main>Loading...<br />Thank you for your patience.</main>
+    }
+
     return (
         <main>
             <Subheader title="All articles" />
