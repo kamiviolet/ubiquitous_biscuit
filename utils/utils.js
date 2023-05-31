@@ -18,6 +18,14 @@ export const fetchCommentsByArticleId = (articleId) => {
     return ncNewsAPI.get(`/articles/${articleId}/comments`).then(({data}) => data);
 }
 
+export const updateVotesByArticleId = (id, inc_votes) => {
+    return ncNewsAPI.patch(`/articles/${id}`, { inc_votes }).then(({data}) => data);
+}
+
+export const updateVotesByCommentId = (id, inc_votes) => {
+    return ncNewsAPI.patch(`/comments/${id}`, { inc_votes }).then(({data}) => data);
+}
+
 export const convertDate = (datestamp) => {
     return `${new Date(datestamp).toLocaleString('en-GB', { timeZone: 'UTC' })} UTC`
 }

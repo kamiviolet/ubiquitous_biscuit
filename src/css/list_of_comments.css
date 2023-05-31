@@ -41,25 +41,26 @@
     content: "By "
 }
 
-[role="author"] {
+.list_of_comments [role="author"] {
     text-align: left;
     grid-column: 2 / span 3;
     grid-row: 2 / 2;
     font-style: italic;
 }
 
-[role="date"] {
+.list_of_comments [role="date"] {
     grid-column: 2 / 2;
     grid-row: 3 / 3;
     font-size: .9em;
 }
 
-[role="votes"] {
+.list_of_comments [role="votes"] {
     text-align: right;
     grid-column: 4 / 4;
-    grid-row: 3 / 3;
-}
-
-.stat {
+    grid-row: 2 / span 2;
+    align-self: last baseline;
+    justify-self: last baseline;
+    padding: .5em .75em;
     font-size: 0.9em;
+
 }
