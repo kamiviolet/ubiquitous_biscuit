@@ -6,7 +6,7 @@ export default function Article({article}) {
         <>
             <article>
                 <Subheader title={article.title} />
-                <p role="topic">{article.topic}</p>
+                <p className={article.topic} role="topic">{article.topic}</p>
                 <p role="article_id">{article.article_id}</p>
 
                 <p role="article_body">{article.body}</p>
