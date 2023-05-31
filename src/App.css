@@ -6,6 +6,15 @@
 header {
   padding-block: 2.5rem;
   min-height: 20vh;
+  background-color: white;
+  position: relative;
+  background: white
+}
+
+header h1 {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
 }
 
 footer {
