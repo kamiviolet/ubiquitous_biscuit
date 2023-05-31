@@ -17,7 +17,7 @@ header h1 {
   left: 20px;
 }
 
-#loading_page {
+.loading_page {
   height: 500px;
   display: flex;
   justify-content: center;
