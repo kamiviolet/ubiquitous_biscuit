@@ -1,0 +1,26 @@
+.menuWrapper {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(189, 221, 243);
+    padding: .5rem;
+    margin-block: 2rem;
+}
+
+.nav_item {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.menuWrapper a:hover {
+    background-color: lightsalmon;
+}
+
+.menuWrapper a {
+    width: inherit;
+    padding-block: 1rem;
+    text-transform: capitalize;
+}
