@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import '../css/article_card.css'
 
 export default function ArticleSummary({article}) {
     return (

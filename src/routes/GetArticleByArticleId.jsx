@@ -1,39 +1,33 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchArticleByArticleId } from '../../utils/utils'
-import Subheader from "../components/Subheader";
+import { fetchArticleByArticleId,fetchCommentsByArticleId } from '../../utils/utils'
+import Article from "../components/Article";
+import CommentSection from "../components/CommentSection";
+
 import '../css/article.css'
 
 export default function GetArticleByArticleId() {
     const {article_id} = useParams();
     const [article, setArticle] = useState([]);
+    const [listOfComments, setListOfComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetchArticleByArticleId(article_id).then(({article}) => setArticle(article)).then(()=>setIsLoading(false))
+        fetchArticleByArticleId(article_id)
+            .then(({article}) => setArticle(article))
+            .then(()=> fetchCommentsByArticleId(article_id))
+            .then(({comments}) => setListOfComments(comments))
+            .then(()=>setIsLoading(false))
     }, [])
 
     if (isLoading) {
-        return  <main>Loading...<br />Thank you for your patience.</main>
+        return  <main>Loading...<br />Don't worry, it may take some time. Thank you for your patience.</main>
     }
 
     return (
         <main>
-            <article>
-                <Subheader title={article.title} />
-                <p role="topic">{article.topic}</p>
-                <p role="article_id">{article.article_id}</p>
-
-                <p role="article_body">{article.body}</p>
-                <p className="created_data">
-                    <span role="author">{article.author} | </span>
-                    <span role="date">{article.created_at}</span>
-                </p>
-                <p className="stat">
-                    <span role="votes">votes: {article.votes} | </span>
-                    <span role="comment_no">comments: {article.comment_count}</span>
-                </p>
-            </article>
+            <Article article={article} />
+            <CommentSection listOfComments={listOfComments} />
         </main>
     )
 }
