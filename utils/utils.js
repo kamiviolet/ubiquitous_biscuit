@@ -17,3 +17,7 @@ export const fetchArticleByArticleId = (articleId) => {
 export const fetchCommentsByArticleId = (articleId) => {
     return ncNewsAPI.get(`/articles/${articleId}/comments`).then(({data}) => data);
 }
+
+export const convertDate = (datestamp) => {
+    return new Date(datestamp).toLocaleDateString()
+}

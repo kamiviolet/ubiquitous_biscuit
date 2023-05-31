@@ -1,4 +1,5 @@
 import Subheader from "../components/Subheader";
+import {convertDate} from "../../utils/utils"
 
 export default function Article({article}) {
     return (
@@ -11,7 +12,7 @@ export default function Article({article}) {
                 <p role="article_body">{article.body}</p>
                 <p className="created_data">
                     <span role="author">{article.author} | </span>
-                    <span role="date">{article.created_at}</span>
+                    <span role="date">{convertDate(article.created_at)}</span>
                 </p>
                 <p className="stat">
                     <span role="votes">Upvotes {article.votes} | </span>
