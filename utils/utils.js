@@ -13,3 +13,11 @@ export const getAllTopics = () => {
 export const fetchArticleByArticleId = (articleId) => {
     return ncNewsAPI.get(`/articles/${articleId}`).then(({data}) => data);
 }
+
+export const fetchCommentsByArticleId = (articleId) => {
+    return ncNewsAPI.get(`/articles/${articleId}/comments`).then(({data}) => data);
+}
+
+export const convertDate = (datestamp) => {
+    return `${new Date(datestamp).toLocaleString('en-GB', { timeZone: 'UTC' })} UTC`
+}

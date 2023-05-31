@@ -1,0 +1,65 @@
+[role="comment_section"] {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.list_of_comments {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.comment_card {
+    background-color: white;
+    border: 1px solid lightgray;
+    margin-block: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 40px auto auto 95px;
+    grid-template-rows: auto auto auto;
+    gap: 0.5rem;
+}
+
+.comment_card:first-of-type {
+    margin-block-start: unset;
+}
+
+.comment_card:last-of-type {
+    margin-block-end: unset;
+}
+
+[role="comment_id"]::before {
+    content: "#"
+}
+
+[role="comment_id"] {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    font-size: .95em;
+}
+
+[role="author"]::before {
+    content: "By "
+}
+
+[role="author"] {
+    text-align: left;
+    grid-column: 2 / span 3;
+    grid-row: 2 / 2;
+    font-style: italic;
+}
+
+[role="date"] {
+    grid-column: 2 / 2;
+    grid-row: 3 / 3;
+    font-size: .9em;
+}
+
+[role="votes"] {
+    text-align: right;
+    grid-column: 4 / 4;
+    grid-row: 3 / 3;
+}
+
+.stat {
+    font-size: 0.9em;
+}

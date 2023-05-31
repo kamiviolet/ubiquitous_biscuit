@@ -1,11 +1,27 @@
 #root {
-  max-width: 1280px;
+  max-width: 1024px;
   text-align: center;
 }
 
 header {
   padding-block: 2.5rem;
   min-height: 20vh;
+  background-color: white;
+  position: relative;
+  background: white
+}
+
+header h1 {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+#loading_page {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 footer {
@@ -14,4 +30,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 750px) {
+  #root {
+    width: 100vw;
+  }
+
 }
