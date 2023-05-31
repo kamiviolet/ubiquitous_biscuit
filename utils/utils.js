@@ -26,6 +26,10 @@ export const updateVotesByCommentId = (id, inc_votes) => {
     return ncNewsAPI.patch(`/comments/${id}`, { inc_votes }).then(({data}) => data);
 }
 
+export const postNewCommentByArticleId = (id, newComment) => {
+    return ncNewsAPI.post(`articles/${id}/comments`, newComment).then(({data}) => data);
+}
+
 export const convertDate = (datestamp) => {
     return `${new Date(datestamp).toLocaleString('en-GB', { timeZone: 'UTC' })} UTC`
 }

@@ -6,8 +6,12 @@ import NewCommentForm from '../components/NewCommentForm'
 
 
 export default function CommentSection({article_id}) {
-    const [listOfComments, setListOfComments] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [listOfComments, setListOfComments] = useState([]);
+    const [newComment, setNewComment] = useState({
+        username: "",
+        body: ""
+    });
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetchCommentsByArticleId(article_id)
@@ -21,7 +25,13 @@ export default function CommentSection({article_id}) {
 
     return (
         <section id="comments" role="comment_section">
-            <NewCommentForm />
+            <NewCommentForm
+                article_id={article_id}
+                newComment={newComment}
+                listOfComments={listOfComments}
+                setNewComment={setNewComment}
+                setListOfComments={setListOfComments}
+            />
             <ListOfComments listOfComments={listOfComments} />
         </section>
     )
