@@ -33,7 +33,7 @@ export default function Article({article_id}) {
                     <span role="date">{convertDate(article.created_at)}</span>
                 </p>
                 <div className="stat">
-                    <UpvoteBtn votes={article.votes} />
+                    <UpvoteBtn type="article" id={article.article_id} votes={article.votes} />
                     <CommentBtn link="#comments" comments={article.comment_count} />
                 </div>
             </article>

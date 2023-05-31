@@ -29,7 +29,7 @@ export default function CommentSection({article_id}) {
                             <p role="comment_body" aria-roledescription="comment_body">{comment.body}</p>
                             <p role="author" aria-roledescription="author">{comment.author}</p>
                             <p role="date" aria-roledescription="created_at">{convertDate(comment.created_at)}</p>
-                            <UpvoteBtn votes={comment.votes} />
+                            <UpvoteBtn type="comment" id={comment.comment_id} votes={comment.votes} />
                         </li>
                     )
                 })}
