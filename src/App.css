@@ -17,6 +17,13 @@ header h1 {
   left: 20px;
 }
 
+#loading_page {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 footer {
   padding-block: 2.75rem;
   min-height: 20vh;
