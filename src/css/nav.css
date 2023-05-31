@@ -11,12 +11,13 @@ nav {
 .menuWrapper {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: stretch;
     background-color: rgb(182, 180, 180);
 }
 
 .nav_item {
-    width: 100%;
+    width: 100px;
     display: flex;
     align-items: center;
     background-color: aliceblue;
