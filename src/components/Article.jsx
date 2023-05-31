@@ -2,6 +2,9 @@ import Subheader from "../components/Subheader";
 import { convertDate } from "../../utils/utils"
 import { useEffect, useState } from "react";
 import { fetchArticleByArticleId } from '../../utils/utils'
+import UpvoteBtn from "../components/UpvoteBtn"
+import CommentBtn from "../components/CommentBtn"
+
 
 export default function Article({article_id}) {
     const [article, setArticle] = useState([]);
@@ -29,10 +32,10 @@ export default function Article({article_id}) {
                     <span role="author">{article.author} | </span>
                     <span role="date">{convertDate(article.created_at)}</span>
                 </p>
-                <p className="stat">
-                    <span role="votes">Upvotes {article.votes} | </span>
-                    <span role="comment_no">comments {article.comment_count}</span>
-                </p>
+                <div className="stat">
+                    <UpvoteBtn votes={article.votes} />
+                    <CommentBtn link="#comments" comments={article.comment_count} />
+                </div>
             </article>
         </>
     )

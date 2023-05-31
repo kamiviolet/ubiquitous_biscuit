@@ -1,5 +1,6 @@
 import '../css/list_of_comments.css'
 import {convertDate} from "../../utils/utils"
+import UpvoteBtn from "../components/UpvoteBtn"
 import { fetchCommentsByArticleId } from '../../utils/utils'
 import { useEffect, useState } from "react";
 
@@ -28,7 +29,7 @@ export default function CommentSection({article_id}) {
                             <p role="comment_body" aria-roledescription="comment_body">{comment.body}</p>
                             <p role="author" aria-roledescription="author">{comment.author}</p>
                             <p role="date" aria-roledescription="created_at">{convertDate(comment.created_at)}</p>
-                            <p className="stat" role="votes" aria-roledescription="number_of_votes">votes: {comment.votes}</p>
+                            <UpvoteBtn votes={comment.votes} />
                         </li>
                     )
                 })}

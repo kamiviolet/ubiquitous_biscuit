@@ -5,6 +5,8 @@ article {
     line-height: 1.5;
     position: relative;
     border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
 }
 
 article [role="article_body"] {
@@ -31,7 +33,9 @@ article [role="author"] {
 
 article .stat {
     margin-block: .5rem;
-    text-align: right;
+    max-width: 200px;
+    align-self: end;
+    
 }
 
 article .created_data {
