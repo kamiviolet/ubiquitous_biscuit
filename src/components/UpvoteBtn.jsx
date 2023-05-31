@@ -10,7 +10,8 @@ export default function UpvoteBtn({type, id, votes}) {
     const handleVotes = () => {
         if (haveVoted) {
             setHaveVoted(false);
-    
+            setCurrVotes((currVotes) => currVotes - 1)
+
             if (type === "article") {
                 updateVotesByArticleId(id, -1).then(({article}) => setCurrVotes(article.votes))
             }
@@ -19,7 +20,8 @@ export default function UpvoteBtn({type, id, votes}) {
             }
         } else {
             setHaveVoted(true);
-    
+            setCurrVotes((currVotes) => currVotes + 1)
+
             if (type === "article") {
                 updateVotesByArticleId(id, 1).then(({article}) => setCurrVotes(article.votes))
             }
