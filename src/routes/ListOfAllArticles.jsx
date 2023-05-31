@@ -13,7 +13,7 @@ export default function ListOfAllArticles() {
     }, []);
     
     if (isLoading) {
-        return  <main>Loading...<br />Thank you for your patience.</main>
+        return  <div className='loading_page'>Loading...<br />Thank you for your patience.</div>
     }
 
     return (

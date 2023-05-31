@@ -17,7 +17,7 @@ export default function Article({article_id}) {
     }, [])
 
     if (isLoading) {
-        return  <div id="loading_page">Loading...<br />Don't worry, it may take some time. Thank you for your patience.</div>
+        return  <div className='loading_page'>Loading...<br />Don't worry, it may take some time. Thank you for your patience.</div>
     }
 
     return (
