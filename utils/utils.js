@@ -19,5 +19,5 @@ export const fetchCommentsByArticleId = (articleId) => {
 }
 
 export const convertDate = (datestamp) => {
-    return new Date(datestamp).toLocaleDateString()
+    return `${new Date(datestamp).toLocaleString('en-GB', { timeZone: 'UTC' })} UTC`
 }
