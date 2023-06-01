@@ -9,8 +9,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: black;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,7 +18,6 @@
 
 a {
   font-weight: 800;
-  color: black;
   text-decoration: inherit;
 }
 
@@ -30,7 +27,14 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: whitesmoke;
+}
+
+.dark a {
+  color: white;
+}
+
+.light a {
+  color: black;
 }
 
 h1 {
