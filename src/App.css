@@ -1,15 +1,83 @@
 #root {
-  width: 100%;
-  max-width: 1024px;
+  width: 100vw;
   text-align: center;
 }
 
-header {
-  padding-block: 2.5rem;
-  min-height: 20vh;
+#theme {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.light {
   background-color: white;
+  color: black;
+}
+
+#wrapper {
+  width: inherit;
+  max-width: 1024px;
+  box-shadow: 0 0 1px rgb(120, 132, 136);
+}
+
+.topics {
+  color: black;
+}
+
+.theme_toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 1.25em;
+  padding: 0 .7em;
   position: relative;
-  background: white
+}
+
+.theme_toggle svg {
+  position: absolute;
+  bottom: -1.25px;
+  right: 0;
+}
+
+.dark .theme_toggle {
+  color: white;
+}
+
+header {
+  padding-block: 1rem 2.5rem;
+  padding-inline: .65rem;
+  min-height: 150px;
+  position: relative;
+}
+.light header {
+  background-color: rgb(255, 255, 255);
+}
+
+.dark header {
+  background-color: rgb(87, 87, 87);
+}
+.header_wrapper {
+  float: right;
+  text-align: right;
+}
+
+.header_wrapper a,
+.header_wrapper p {
+  margin-inline: .5rem;
+}
+
+.header_wrapper a {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.header_wrapper a:hover {
+  color: darkorange;
 }
 
 header h1 {
@@ -33,9 +101,12 @@ footer {
   align-items: center;
 }
 
+.prevPage {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 750px) {
   #root {
     width: 100vw;
   }
-
 }
