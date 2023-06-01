@@ -25,6 +25,7 @@ a {
 }
 
 body {
+  font-size: 14px;
   display: flex;
   justify-content: center;
   min-width: 320px;

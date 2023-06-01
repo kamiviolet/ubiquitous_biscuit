@@ -10,11 +10,15 @@
     grid-template-columns: 40px auto auto 95px 95px;
     grid-template-rows: auto auto auto;
     gap: 0.5rem;
-    border-bottom: 1px slategray solid;
+    border-bottom: 1px rgb(212, 212, 212) solid;
 }
 
 .article_card:last-of-type {
     border-bottom: unset;
+}
+
+.article_card:hover {
+    border: 1px slategray solid;
 }
 
 [role="article_id"]::before {
