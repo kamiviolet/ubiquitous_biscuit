@@ -71,8 +71,12 @@ textarea, input {
 }
 
 .required::after {
-    content: " * (Posting new comment is only for current users)";
+    content: " * ";
     color: red;
+}
+
+.new_comment > button[type="submit"][disabled] {
+    background-color: lightslategray;
 }
 
 @media screen and (min-width: 750px) {

@@ -1,5 +1,6 @@
 [role="comment_section"] {
     text-align: left;
+    overflow-wrap: break-word;
 }
 
 .list_of_comments h3 {
