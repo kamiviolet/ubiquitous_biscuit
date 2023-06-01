@@ -3,7 +3,6 @@ import Subheader from '../components/Subheader'
 import ArticleSummary from '../components/ArticleSummary'
 import { getAllArticles } from '../../utils/utils'
 import '../css/list_of_articles.css'
-import FilterSorter from '../components/FilterSorter'
 
 export default function ListOfAllArticles({topic}) {
     const [listOfArticles, setListOfArticles] = useState([]);
@@ -22,7 +21,6 @@ export default function ListOfAllArticles({topic}) {
     return (
         <main>
             <Subheader title={topic? topic : "All topics"} />
-            <FilterSorter />
             <ul className='list_of_articles'>
                 {
                     (!listOfArticles) ? <></>
