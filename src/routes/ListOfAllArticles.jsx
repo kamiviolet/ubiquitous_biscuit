@@ -4,26 +4,32 @@ import ArticleSummary from '../components/ArticleSummary'
 import { getAllArticles } from '../../utils/utils'
 import '../css/list_of_articles.css'
 
-export default function ListOfAllArticles() {
+export default function ListOfAllArticles({topic}) {
     const [listOfArticles, setListOfArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        getAllArticles().then(({articles}) => setListOfArticles(articles)).then(() => setIsLoading(false))
-    }, []);
-    
+        getAllArticles(topic)
+            .then(({articles}) => setListOfArticles(articles))
+            .then(() => setIsLoading(false))
+    }, [topic]);
+
     if (isLoading) {
         return  <div className='loading_page'>Loading...<br />Thank you for your patience.</div>
     }
 
     return (
         <main>
-            <Subheader title="All articles" />
+            <Subheader title={topic? topic : "All topics"} />
             <ul className='list_of_articles'>
                 {
                     (!listOfArticles) ? <></>
                     : listOfArticles.map(article => {
-                        return (<li key={"article_" + article.article_id} className='article_card'><ArticleSummary article={article}/></li>)
+                        return (
+                            <li key={"article_" + article.article_id} className='article_card'>
+                                <ArticleSummary topic={topic} article={article}/>
+                            </li>
+                        )
                     })
                 }
             </ul>

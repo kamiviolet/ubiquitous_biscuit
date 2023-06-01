@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 import UpvoteBtn from "../components/UpvoteBtn"
 import CommentBtn from "../components/CommentBtn"
 
-export default function ArticleSummary({article}) {
+export default function ArticleSummary({topic, article}) {
     return (
         <>
             <p role="article_id" aria-hidden>{article.article_id}</p>
-            <Link to={"articles/"+article.article_id}>
+            <Link to={topic? "../../articles/"+article.article_id : "articles/"+article.article_id}>
                 <p role="title" aria-roledescription="title">{article.title}</p>
             </Link>
             <p role="author" aria-roledescription="author">{article.author}</p>

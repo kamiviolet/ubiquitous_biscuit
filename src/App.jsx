@@ -10,8 +10,8 @@ import './App.css'
 function App() {
   return (
     <>
-      <Nav />
       <Header />
+      <Nav />
       <Routes >
         <Route path={"/"} element={<ListOfAllArticles />}></Route>
         <Route path="/topics/:topic_name" element={<ListOfArticlesByTopic />}></Route>
