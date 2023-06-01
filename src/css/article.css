@@ -1,12 +1,20 @@
 article {
     padding: 1rem;
-    background-color: white;
     text-align: left;
     line-height: 1.5;
     position: relative;
-    border: 1px solid lightgray;
     display: flex;
     flex-direction: column;
+}
+
+.dark article {
+    background-color: rgb(57, 61, 61);
+    border-block: 1px solid rgb(127, 125, 138);
+}
+
+.light article {
+    background-color: rgb(239, 248, 255);
+    border-block: 1px solid lightgray;
 }
 
 article [role="article_body"] {
