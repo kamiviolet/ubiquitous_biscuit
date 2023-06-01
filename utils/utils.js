@@ -2,8 +2,12 @@ import axios from 'axios'
 
 const ncNewsAPI = axios.create({ baseURL: 'https://nc-news-au6b.onrender.com/api' })
 
-export const getAllArticles = () => {
-    return ncNewsAPI.get('/articles').then(({data}) => data);
+export const getAllArticles = (topic) => {
+    if (!topic) {
+        return ncNewsAPI.get('/articles').then(({data}) => data);
+    } else {
+        return ncNewsAPI.get(`/articles?topic=${topic}`).then(({data}) => data);
+    }
 };
 
 export const getAllTopics = () => {
@@ -28,6 +32,10 @@ export const updateVotesByCommentId = (id, inc_votes) => {
 
 export const postNewCommentByArticleId = (id, newComment) => {
     return ncNewsAPI.post(`articles/${id}/comments`, newComment).then(({data}) => data);
+}
+
+export const fetchUsers = () => {
+    return ncNewsAPI.get('/users').then(({data}) => data);
 }
 
 export const convertDate = (datestamp) => {

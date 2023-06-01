@@ -19,6 +19,9 @@ export default function NewCommentForm({article_id, newComment, setNewComment, l
                 .then(() => {
                     setPosting(false)
                 })
+                .catch((err) => {
+                    return <div>Sorry, the comment is not posted at the moment. {err.message}</div>
+                })
     }
 
     useEffect(() => {
