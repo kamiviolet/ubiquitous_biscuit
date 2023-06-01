@@ -11,7 +11,7 @@ export default function ArticleSummary({topic, article}) {
             </Link>
             <p role="author" aria-roledescription="author">{article.author}</p>
             <p role="date" aria-roledescription="created_at">{article.created_at}</p>
-            <p className={article.topic} role="topic" aria-roledescription="under_topic">{article.topic}</p>
+            <p className={article.topic + " topics"}  role="topic" aria-roledescription="under_topic">{article.topic}</p>
             <div className="stat">
                 <CommentBtn link={"articles/"+article.article_id+"#comments"} comments={article.comment_count} />
                 <UpvoteBtn type="article" id={article.article_id} votes={article.votes} />            </div>
