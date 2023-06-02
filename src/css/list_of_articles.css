@@ -57,7 +57,7 @@
     background-color: rgb(154, 176, 199);
     border-radius: 5px;
     place-self: start end;
-    padding: 0.25em 1em;
+    padding: 0.5em 1em;
 }
 
 [role="title"] {
@@ -83,9 +83,13 @@
 }
 
 .cooking {
-    background-color: palevioletred;
+    background-color: rgb(255, 157, 190);
 }
 
 .coding {
-    background-color: rgb(127, 193, 196);
+    background-color: rgb(145, 249, 255);
+}
+
+.football {
+    background-color: rgb(170, 198, 255);
 }

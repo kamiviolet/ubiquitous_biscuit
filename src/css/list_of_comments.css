@@ -3,25 +3,26 @@
     overflow-wrap: break-word;
 }
 
-.dark [role="comment_section"] {
+.dark .list_of_comments {
     background-color: rgb(44, 44, 44);
     border-block: 1px solid lightgray;
 }
 
-.light [role="comment_section"] {
+.light .list_of_comments {
     background-color: whitesmoke;
 }
 
 .list_of_comments h3 {
-    padding-block: 1rem;
+    padding: 1rem;
 }
 
 .list_of_comments ul {
     list-style: none;
+    padding-bottom: 3rem;
 }
 
 .comment_card {
-    margin-block: .5em;
+    margin: 2rem;
     padding: 1rem;
     display: grid;
     grid-template-columns: 40px auto auto 95px;
@@ -31,11 +32,13 @@
 }
 
 .dark .comment_card {
-    border-block: 1px solid rgb(127, 125, 138);
+    background-color: dimgray;
+    border: 1px solid rgb(127, 125, 138);
 }
 
 .light .comment_card {
-    border-block: 1px solid lightgray;
+    background-color: white;
+    border: 1px solid lightgray;
 }
 
 .comment_card:first-of-type {

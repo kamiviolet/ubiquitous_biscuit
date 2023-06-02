@@ -38,9 +38,7 @@
 }
 
 .theme_toggle svg {
-  position: absolute;
-  bottom: -1.25px;
-  right: 0;
+  transform: translate(0, 2px);
 }
 
 .dark .theme_toggle {
@@ -58,7 +56,7 @@ header {
 }
 
 .dark header {
-  background-color: rgb(87, 87, 87);
+  background-color: rgb(47, 50, 65);
 }
 .header_wrapper {
   float: right;
@@ -86,6 +84,17 @@ header h1 {
   left: 20px;
 }
 
+header::after {
+  content: "";
+  background-color: orange;
+  height: 10px;
+  width: 100%;
+  display: block;
+  position: absolute;
+  translate: -10px;
+  bottom: 0;
+}
+
 .loading_page {
   height: 500px;
   display: flex;
@@ -99,6 +108,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.dark footer {
+  background-color: rgb(37, 52, 68);
 }
 
 .prevPage {

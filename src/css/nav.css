@@ -14,12 +14,8 @@ nav {
     justify-content: stretch;
 }
 
-.light .menuWrapper {
-    background-color: rgb(227, 243, 253);
-}
-
-.dark .menuWrapper {
-    background-color: rgb(59, 59, 59);
+.menuWrapper {
+    background-color: rgb(18, 110, 167);
 }
 
 :is(.dark) .menuWrapper a {
@@ -34,8 +30,13 @@ nav {
 }
 
 .menuWrapper a:hover {
-    background-color: lightsalmon;
-    transition: 300ms;
+    background-color: rgb(253, 255, 128);
+    transition: 500ms;
+}
+
+.menuWrapper a:hover {
+    background-color: rgb(253, 255, 128);
+    transition: 500ms;
 }
 
 .menuWrapper a {

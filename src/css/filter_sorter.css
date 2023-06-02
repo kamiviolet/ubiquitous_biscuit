@@ -1,0 +1,24 @@
+#filter_sorter {
+    background-color: rgb(231, 231, 231);
+    text-align: left;
+    padding-block: .75em;
+    color: black
+}
+
+.dark #filter_sorter {
+    background-color: rgb(67, 69, 85);
+    color: white
+}
+
+#filter_sorter select {
+    padding-block: .6em;
+    margin-inline: 1rem;
+    border-radius: 0;
+    border: 1px slategray solid;
+    font-size: 1em;
+}
+
+#filter_sorter button[type="submit"] {
+    border: 1px slategray solid;
+    border-radius: 0;
+} 
