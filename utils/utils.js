@@ -2,11 +2,11 @@ import axios from 'axios'
 
 const ncNewsAPI = axios.create({ baseURL: 'https://nc-news-au6b.onrender.com/api' })
 
-export const getAllArticles = (topic) => {
+export const getAllArticles = (topic, {sort_by, order}) => {
     if (!topic) {
-        return ncNewsAPI.get('/articles').then(({data}) => data);
+        return ncNewsAPI.get(`/articles?sort_by=${sort_by}&order=${order}`).then(({data}) => data);
     } else {
-        return ncNewsAPI.get(`/articles?topic=${topic}`).then(({data}) => data);
+        return ncNewsAPI.get(`/articles?topic=${topic}&sort_by=${sort_by}&order=${order}`).then(({data}) => data);
     }
 };
 

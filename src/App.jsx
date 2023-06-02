@@ -11,8 +11,6 @@ function App() {
   const {theme, setTheme} = useContext(ThemeContext)
   const {user, setUser} = useContext(UserContext)
 
-  console.log(user)
-
   return (
     <div id="theme" className={theme}>
       <div id="wrapper">
