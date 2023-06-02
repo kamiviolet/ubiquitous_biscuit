@@ -1,7 +1,7 @@
 #filter_sorter {
     background-color: rgb(231, 231, 231);
     text-align: left;
-    padding-block: .75em;
+    padding: .75em 1em;
     color: black
 }
 
@@ -12,10 +12,11 @@
 
 #filter_sorter select {
     padding-block: .6em;
-    margin-inline: 1rem;
+    margin: .5rem;
     border-radius: 0;
     border: 1px slategray solid;
     font-size: 1em;
+    background-color: white;
 }
 
 #filter_sorter button[type="submit"] {
