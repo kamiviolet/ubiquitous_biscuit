@@ -41,6 +41,12 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   padding-block: 2.5rem;
+  color: rgb(12, 75, 114);
+  text-shadow: 0 0 2px lightslategray;
+}
+
+.dark h1 {
+  color: rgb(236, 248, 255);
 }
 
 h2 {

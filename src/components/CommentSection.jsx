@@ -1,14 +1,15 @@
 import '../css/list_of_comments.css'
 import { fetchCommentsByArticleId } from '../../utils/utils'
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from 'react'
 import ListOfComments from '../components/ListOfComments'
 import NewCommentForm from '../components/NewCommentForm'
-
+import { UserContext } from '../contexts/User';
 
 export default function CommentSection({article_id}) {
+    const { user, setUser } = useContext(UserContext);
     const [listOfComments, setListOfComments] = useState([]);
     const [newComment, setNewComment] = useState({
-        username: "",
+        username: user,
         body: ""
     });
     const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +27,7 @@ export default function CommentSection({article_id}) {
     return (
         <section id="comments" role="comment_section">
             <NewCommentForm
+                user={user}
                 article_id={article_id}
                 newComment={newComment}
                 listOfComments={listOfComments}
