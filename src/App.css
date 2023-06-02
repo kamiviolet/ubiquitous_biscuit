@@ -46,7 +46,7 @@
 }
 
 header {
-  padding-block: 1rem 2.5rem;
+  padding-block: 1em .75em;
   padding-inline: .65rem;
   min-height: 150px;
   position: relative;
@@ -79,9 +79,7 @@ header {
 }
 
 header h1 {
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
+  text-align: left;
 }
 
 header::after {

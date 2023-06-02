@@ -20,6 +20,7 @@ article {
 article [role="article_body"] {
     font-size: 1.15em;
     margin-block: 1rem;
+    line-height: 1.75;
 }
 
 article [role="article_id"] {

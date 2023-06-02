@@ -23,13 +23,13 @@
     align-self: first baseline;
 }
 
-.username_label {
+.author_label {
     grid-row: 1/ 2;
     grid-column: 2/ 4;
     justify-self: left;
 }
 
-#username {
+#author {
     grid-row: 2/3;
     grid-column: 2/span 2;
     justify-self: first baseline;

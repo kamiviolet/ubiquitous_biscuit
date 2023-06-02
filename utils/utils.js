@@ -38,6 +38,14 @@ export const fetchUsers = () => {
     return ncNewsAPI.get('/users').then(({data}) => data);
 }
 
+export const getLoginUser = (username) => {
+    return ncNewsAPI.get(`/users/${username}`).then(({data}) => data);
+}
+
+export const createNewUser = (newUser) => {
+    return ncNewsAPI.post(`/users`, newUser).then(({data}) => data);
+}
+
 export const convertDate = (datestamp) => {
     return `${new Date(datestamp).toLocaleString('en-GB', { timeZone: 'UTC' })} UTC`
 }

@@ -3,7 +3,7 @@ import { postNewCommentByArticleId, fetchUsers } from "../../utils/utils"
 import { useEffect, useState } from 'react'
 import '../css/new_comment_form.css'
 
-export default function NewCommentForm({article_id, newComment, setNewComment, listOfComments, setListOfComments}) {
+export default function NewCommentForm({article_id, newComment, user, setNewComment, listOfComments, setListOfComments}) {
     const [allUsers, setAllUsers] = useState([]);
     const [posting, setPosting] = useState(false);
 
@@ -13,7 +13,7 @@ export default function NewCommentForm({article_id, newComment, setNewComment, l
 
             postNewCommentByArticleId(article_id, newComment)
                 .then(({comment}) => {
-                    setNewComment({username: "", body: ""});
+                    setNewComment({username: user, body: ""});
                     setListOfComments((listOfComments) => [comment, ...listOfComments])
                 })
                 .then(() => {
@@ -31,15 +31,15 @@ export default function NewCommentForm({article_id, newComment, setNewComment, l
     return (
         <form className="new_comment" role="new_comment_form" onSubmit={handleNewComment}>
             <div className="avatar" role="avatar"><HiUser /></div>
-            <label htmlFor="username" className="username_label required">Username: </label>
+            <label htmlFor="author" className="author_label required">Username: </label>
             <select
                 className="input_field"
                 onChange={(e)=> setNewComment({...newComment, username: e.target.value})}
-                name="username"
-                id="username"
+                name="author"
+                id="author"
                 type="text"
                 value={newComment.username}
-                required
+                disabled
             >
                 <option value=""></option>
                 {allUsers.map(user => <option value={user.username} key={user.username}>{user.username}</option>)}

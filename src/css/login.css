@@ -1,0 +1,107 @@
+#login_page, #signup_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 5vh;
+}
+
+.login_wrapper {
+    max-width: 650px;
+    width: 100vw;
+    box-shadow: 0 5px 15px lightslategray;
+    padding: 2rem;
+}
+
+.login_wrapper h1 {
+    font-size: 2.25em;
+    border-bottom: 5px solid orange;
+}
+
+.login_wrapper a, .login_wrapper p {
+    display: block;
+    margin-block: 1em;
+    padding-block: .75em;
+}
+
+#login_form {
+    padding-inline: 3em;
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    margin-block: 2rem;
+}
+
+.username_label {
+    justify-self: stretch;
+    align-self: center;
+}
+
+
+.login_container input {
+    width: 100%;
+    padding: .6em .25em;
+}
+
+.login_container {
+    background-color: rgb(32, 115, 167);
+    color: white;
+    font-weight: 600;
+    font-size: 1.25em;
+    padding-block: 1rem;
+}
+
+#login_form > button {
+    width: 200px;
+    padding-block: 1em;
+    margin-top: 2em;
+}
+
+.back_to_home {
+    text-decoration: underline;
+    color: white;
+    font-size: 1em;
+}
+
+.login_message {
+    color: white;
+    background-color: rgb(248, 79, 79);
+    padding-block: 1rem;
+}
+
+.link_signup {
+    color: rgb(216, 216, 216);
+}
+
+.link_signup:hover {
+    background-color: rgba(250, 224, 213, 0.726);
+    color: brown
+}
+
+@media screen and (min-width: 750px) {
+    #login_form {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    #login_page .username_label {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+    
+    #login_page #username {
+        grid-row: 1/2;
+        grid-column: 2/4;
+    }
+
+    #login_form > button {
+        grid-row: 2/3;
+        grid-column: 1/span 2;
+    }
+
+
+    #signup_page button {
+        grid-row: 4/5;
+        grid-column: 1/span 2;
+    }
+}

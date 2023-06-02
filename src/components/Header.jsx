@@ -1,8 +1,10 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { useContext } from 'react';
+import { UserContext } from '../contexts/User';
 import ToggleTheme from './ThemeToggle'
 
 export default function Header() {
-    const navigate = useNavigate();
+    const {user, setUser} = useContext(UserContext)
     const options = {
         weekday: "long",
         year: "numeric",
@@ -11,16 +13,25 @@ export default function Header() {
       }
     const date = new Date().toLocaleString("en-GB", options);
 
+    const handleSignout = () => {
+        const signoutConfirmation = confirm('Are you sure to sign out?');
+        if (signoutConfirmation) {
+            setUser("")
+            alert('Now you have successfully signed out.')
+        }
+    }
+
     return (
         <header>
             <div className="header_wrapper">
                 <Link to="/">Home</Link>
                 <span> | </span>
-                <Link>Login</Link>
+                {(user)? <Link onClick={handleSignout}>Sign out</Link> : 
+                <Link to="/login">Log in</Link>}
                 <ToggleTheme />
                 <p>{date}</p>
             </div>
-            <h1><Link to="/">NC-News</Link></h1>
+            <h1>Ubiquitous Biscuits</h1>
         </header>
     )
 }
