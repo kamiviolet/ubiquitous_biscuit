@@ -5,7 +5,6 @@ nav {
     max-width: 1280px;
     right: 0;
     z-index: 5;
-    box-shadow: gray 0 2px 2px;
 }
 
 .menuWrapper {
@@ -13,7 +12,14 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: stretch;
-    background-color: rgb(182, 180, 180);
+}
+
+.menuWrapper {
+    background-color: rgb(18, 110, 167);
+}
+
+:is(.dark) .menuWrapper a {
+    color: black;
 }
 
 .nav_item {
@@ -24,8 +30,13 @@ nav {
 }
 
 .menuWrapper a:hover {
-    background-color: lightsalmon;
-    transition: 300ms;
+    background-color: rgb(253, 255, 128);
+    transition: 500ms;
+}
+
+.menuWrapper a:hover {
+    background-color: rgb(253, 255, 128);
+    transition: 500ms;
 }
 
 .menuWrapper a {
