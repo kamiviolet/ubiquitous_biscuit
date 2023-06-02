@@ -9,6 +9,7 @@ import ListOfAllArticles from '../src/routes/ListOfAllArticles'
 import ListOfArticlesByTopic from '../src/routes/ListOfArticlesByTopic'
 import GetArticleByArticleId from '../src/routes/GetArticleByArticleId'
 import Login from '../src/routes/Login'
+import Signup from './routes/Signup.jsx'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/registration",
+    element: <Signup />
   }
 ])
 

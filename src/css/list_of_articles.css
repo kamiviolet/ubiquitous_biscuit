@@ -3,6 +3,11 @@
     box-shadow: 0 0 2px rgb(147, 178, 189);
 }
 
+.dark .list_of_articles, .dark .list_of_articles a {
+    background-color: rgb(65, 64, 64);
+    color: rgb(219, 219, 219)
+}
+
 .article_card {
     padding: 1rem;
     display: grid;
