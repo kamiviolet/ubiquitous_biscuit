@@ -32,7 +32,7 @@ export default function Login() {
                 <h1>Ubiquitous Biscuits</h1>
                 <div className='login_container'>
                 <form id="login_form" onSubmit={handleLogin}>
-                    <label className='username_label required' for="username">Username</label>
+                    <label className='username_label required' htmlFor="username">Username</label>
                     <input
                         value={loginUser}
                         id="username"

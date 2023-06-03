@@ -46,6 +46,10 @@ export const createNewUser = (newUser) => {
     return ncNewsAPI.post(`/users`, newUser).then(({data}) => data);
 }
 
+export const deleteCommentByCommentId = (comment_id) => {
+    return ncNewsAPI.delete(`/comments/${comment_id}`)
+}
+
 export const convertDate = (datestamp) => {
     return `${new Date(datestamp).toLocaleString('en-GB', { timeZone: 'UTC' })} UTC`
 }

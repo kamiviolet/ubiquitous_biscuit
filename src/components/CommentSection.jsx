@@ -35,7 +35,11 @@ export default function CommentSection({article_id}) {
                 setNewComment={setNewComment}
                 setListOfComments={setListOfComments}
             />
-            <ListOfComments listOfComments={listOfComments} />
+            <ListOfComments
+                currentUser={user}
+                listOfComments={listOfComments}
+                setListOfComments={setListOfComments}
+            />
         </section>
     )
 }
