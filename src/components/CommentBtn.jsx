@@ -1,8 +1,15 @@
 import { BsFillChatSquareDotsFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function CommentBtn({link, comments}) {
+    const navigate = useNavigate();
+    console.log(link)
     return (
-        <Link to={link} role="comment_no" aria-roledescription="number_of_comments"><BsFillChatSquareDotsFill /> {comments}</Link>
+        <button
+            onClick={()=>navigate(link)}
+            role="comment_no"
+            aria-roledescription="number_of_comments">
+                <BsFillChatSquareDotsFill /> {comments}
+            </button>
     )
 }

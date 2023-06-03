@@ -13,7 +13,7 @@ export default function ArticleSummary({topic, article}) {
             <p role="date" aria-roledescription="created_at">{article.created_at}</p>
             <p className={article.topic + " topics"}  role="topic" aria-roledescription="under_topic">{article.topic}</p>
             <div className="stat">
-                <CommentBtn link={"articles/"+article.article_id+"#comments"} comments={article.comment_count} />
+                <CommentBtn link={"/articles/"+article.article_id+"#comments"} comments={article.comment_count} />
                 <UpvoteBtn type="article" id={article.article_id} votes={article.votes} />            </div>
         </>
     )
