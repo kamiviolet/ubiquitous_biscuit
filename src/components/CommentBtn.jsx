@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function CommentBtn({link, comments}) {
     const navigate = useNavigate();
-    console.log(link)
     return (
         <button
             onClick={()=>navigate(link)}

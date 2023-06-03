@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from './contexts/Theme.jsx'
 import { UserProvider } from './contexts/User.jsx'
+import { AllUsersProvider } from './contexts/AllUsers.jsx'
 import App from './App.jsx'
 import ErrorPage from './ErrorPage'
 import ListOfAllArticles from '../src/routes/ListOfAllArticles'
@@ -49,9 +50,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
-      <UserProvider>
-        <RouterProvider router={router} />
-      </UserProvider>
+      <AllUsersProvider>
+        <UserProvider>
+          <RouterProvider router={router} />
+        </UserProvider>
+      </AllUsersProvider>
     </ThemeProvider>
   </React.StrictMode>
 )

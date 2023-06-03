@@ -34,7 +34,7 @@ export const postNewCommentByArticleId = (id, newComment) => {
     return ncNewsAPI.post(`articles/${id}/comments`, newComment).then(({data}) => data);
 }
 
-export const fetchUsers = () => {
+export const fetchAllUsers = () => {
     return ncNewsAPI.get('/users').then(({data}) => data);
 }
 

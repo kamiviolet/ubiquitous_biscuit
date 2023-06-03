@@ -1,5 +1,5 @@
 import { HiUser } from "react-icons/hi2";
-import { postNewCommentByArticleId, fetchUsers } from "../../utils/utils"
+import { postNewCommentByArticleId } from "../../utils/utils"
 import { useState } from 'react'
 import '../css/new_comment_form.css'
 

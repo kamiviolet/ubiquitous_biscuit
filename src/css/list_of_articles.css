@@ -9,12 +9,22 @@
 }
 
 .article_card {
+    display: grid;
+    grid-template-rows: auto auto;
+    border-bottom: 1px rgb(212, 212, 212) solid;
     padding: 1rem;
+}
+
+.article_card_wrapper {
+    grid-column: 1 / 5;
     display: grid;
     grid-template-columns: 40px auto auto 95px ;
     grid-template-rows: auto auto auto;
     gap: 0.5rem;
-    border-bottom: 1px rgb(212, 212, 212) solid;
+}
+
+.article_card > a {
+    font-weight: 400;
 }
 
 .article_card:last-of-type {
@@ -36,7 +46,7 @@
     font-size: .95em;
 }
 
-[role="author"]::before {
+.list_of_articles [role="author"]::before {
     content: "By "
 }
 

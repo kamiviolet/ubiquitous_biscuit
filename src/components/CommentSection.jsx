@@ -5,6 +5,7 @@ import ListOfComments from '../components/ListOfComments'
 import NewCommentForm from '../components/NewCommentForm'
 import { UserContext } from '../contexts/User';
 
+
 export default function CommentSection({article_id}) {
     const { user, setUser } = useContext(UserContext);
     const [listOfComments, setListOfComments] = useState([]);

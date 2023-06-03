@@ -1,7 +1,9 @@
 import { convertDate } from "../../utils/utils"
 import UpvoteBtn from "../components/UpvoteBtn"
+import { HiUser } from "react-icons/hi2";
 
 export default function listOfComments({listOfComments}) {
+
     return (
         <section className='list_of_comments'>
             <h3>Comments</h3>
@@ -9,6 +11,7 @@ export default function listOfComments({listOfComments}) {
                 {listOfComments.map(comment => {
                     return (
                         <li key={"comment_" + comment.comment_id} className='comment_card'>
+                            <div className="avatar" role="avatar"><HiUser /></div>
                             <p role="comment_id" aria-hidden>{comment.comment_id}</p>
                             <p role="comment_body" aria-roledescription="comment_body">{comment.body}</p>
                             <p role="author" aria-roledescription="author">{comment.author}</p>

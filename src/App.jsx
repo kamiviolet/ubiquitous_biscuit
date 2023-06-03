@@ -1,15 +1,20 @@
 import { Outlet } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ThemeContext } from './contexts/Theme';
-import { UserContext } from './contexts/User';
+import { AllUsersContext } from './contexts/AllUsers';
 import Header from '../src/components/Header'
 import Footer from '../src/components/Footer'
 import Nav from '../src/components/Nav'
+import { fetchAllUsers } from '../utils/utils'
 import './App.css'
 
 function App() {
   const {theme, setTheme} = useContext(ThemeContext)
-  const {user, setUser} = useContext(UserContext)
+  const {allUsers, setAllUsers} = useContext(AllUsersContext)
+
+  useEffect(() => {
+    fetchAllUsers().then(({users}) => setAllUsers(users))
+}, [])
 
   return (
     <div id="theme" className={theme}>
