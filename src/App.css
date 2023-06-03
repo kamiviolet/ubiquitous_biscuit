@@ -93,6 +93,10 @@ header::after {
   bottom: 0;
 }
 
+main {
+  min-height: 70vh; 
+}
+
 .loading_page {
   height: 500px;
   display: flex;

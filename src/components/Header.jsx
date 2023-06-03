@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 import { useContext } from 'react';
-import { UserContext } from '../contexts/User';
+import { CurrentUserContext } from '../contexts/CurrentUser';
 import ToggleTheme from './ThemeToggle'
 
 export default function Header() {
-    const {user, setUser} = useContext(UserContext)
+    const {currentUser, setCurrentUser} = useContext(CurrentUserContext)
     const options = {
         weekday: "long",
         year: "numeric",
@@ -16,7 +16,7 @@ export default function Header() {
     const handleSignout = () => {
         const signoutConfirmation = confirm('Are you sure to sign out?');
         if (signoutConfirmation) {
-            setUser("")
+            setCurrentUser({username: "", name: "", avatar_url: ""})
             alert('Now you have successfully signed out.')
         }
     }
@@ -26,10 +26,10 @@ export default function Header() {
             <div className="header_wrapper">
                 <Link to="/">Home</Link>
                 <span> | </span>
-                {(user)? <>
+                {(currentUser.username)? <>
                     <Link onClick={handleSignout}>Sign out</Link>
                     <span> | </span>
-                    <Link onClick="">My Profile</Link>
+                    <Link to={"/users/"+currentUser.username}>My Profile</Link>
                 </> : 
                 <Link to="/login">Log in</Link>}
                 <ToggleTheme />

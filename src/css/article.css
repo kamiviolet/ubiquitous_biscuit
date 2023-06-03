@@ -40,6 +40,11 @@ article [role="author"] {
     font-size: .9em;
 }
 
+article [role="author"],
+article [role="date"] {
+    margin-inline: .75em;
+}
+
 article .stat {
     margin-block: .5rem;
     max-width: 200px;

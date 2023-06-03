@@ -3,14 +3,14 @@ import { fetchCommentsByArticleId } from '../../utils/utils'
 import { useContext, useEffect, useState } from 'react'
 import ListOfComments from '../components/ListOfComments'
 import NewCommentForm from '../components/NewCommentForm'
-import { UserContext } from '../contexts/User';
+import { CurrentUserContext } from '../contexts/CurrentUser';
 
 
 export default function CommentSection({article_id}) {
-    const { user, setUser } = useContext(UserContext);
+    const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
     const [listOfComments, setListOfComments] = useState([]);
     const [newComment, setNewComment] = useState({
-        username: user,
+        username: currentUser.username,
         body: ""
     });
     const [isLoading, setIsLoading] = useState(true);
@@ -22,13 +22,13 @@ export default function CommentSection({article_id}) {
     }, [])
 
     if (isLoading) {
-        return  <div className='loading_page'>Loading...<br />Don't worry, it may take some time. Thank you for your patience.</div>
+        return  <div className='loading_page'>Fetching comments...</div>
     }
 
     return (
         <section id="comments" role="comment_section">
             <NewCommentForm
-                user={user}
+                user={currentUser.username}
                 article_id={article_id}
                 newComment={newComment}
                 listOfComments={listOfComments}
@@ -36,7 +36,7 @@ export default function CommentSection({article_id}) {
                 setListOfComments={setListOfComments}
             />
             <ListOfComments
-                currentUser={user}
+                currentUser={currentUser.username}
                 listOfComments={listOfComments}
                 setListOfComments={setListOfComments}
             />

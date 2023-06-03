@@ -2,13 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from './contexts/Theme.jsx'
-import { UserProvider } from './contexts/User.jsx'
+import { CurrentUserProvider } from './contexts/CurrentUser.jsx'
 import { AllUsersProvider } from './contexts/AllUsers.jsx'
 import App from './App.jsx'
 import ErrorPage from './ErrorPage'
 import ListOfAllArticles from '../src/routes/ListOfAllArticles'
 import ListOfArticlesByTopic from '../src/routes/ListOfArticlesByTopic'
 import GetArticleByArticleId from '../src/routes/GetArticleByArticleId'
+import GetUserByUsername from './routes/GetUserByUsername.jsx'
 import Login from '../src/routes/Login'
 import Signup from './routes/Signup.jsx'
 import './index.css'
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/articles/:article_id",
         element: <GetArticleByArticleId />
+      },
+      {
+        path: "/users/:username",
+        element: <GetUserByUsername />
       }
     ]
   },
@@ -51,9 +56,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
       <AllUsersProvider>
-        <UserProvider>
+        <CurrentUserProvider>
           <RouterProvider router={router} />
-        </UserProvider>
+        </CurrentUserProvider>
       </AllUsersProvider>
     </ThemeProvider>
   </React.StrictMode>

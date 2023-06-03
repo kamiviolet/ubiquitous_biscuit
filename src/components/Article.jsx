@@ -32,8 +32,8 @@ export default function Article({article_id}) {
 
                 <p role="article_body">{article.body}</p>
                 <p className="created_data">
-                    <span role="author">{article.author} | </span>
-                    <span role="date">{convertDate(article.created_at)}</span>
+                    <Link to={"/users/"+article.author} role="author">{article.author}</Link> | 
+                    <span role="date"> {convertDate(article.created_at)}</span>
                 </p>
                 <div className="stat">
                     <CommentBtn link="#comments" comments={article.comment_count} />

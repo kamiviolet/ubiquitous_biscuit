@@ -1,22 +1,22 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom'
-import { UserContext } from '../contexts/User';
+import { CurrentUserContext } from '../contexts/CurrentUser';
 import Footer from '../components/Footer';
-import { getLoginUser } from '../../utils/utils'
+import { getUserByUsername } from '../../utils/utils'
 import '../css/login.css'
 
 export default function Login() {
-    const { user, setUser } = useContext(UserContext)
+    const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
     const [loginUser, setLoginUser] = useState("")
     const [hasAccount, setHasAccount] = useState("")
 
     const handleLogin = (e) => {
         e.preventDefault();
 
-        getLoginUser(loginUser)
-                .then((data) => {
-                    if(data.user) {
-                        setUser(data.user.username)
+        getUserByUsername(loginUser)
+        .then(({user}) => {
+            if(user) {
+                        setCurrentUser({...currentUser, ...user})
                         setHasAccount(true)
                     }
                 })

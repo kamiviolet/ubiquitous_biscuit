@@ -38,7 +38,7 @@ export const fetchAllUsers = () => {
     return ncNewsAPI.get('/users').then(({data}) => data);
 }
 
-export const getLoginUser = (username) => {
+export const getUserByUsername = (username) => {
     return ncNewsAPI.get(`/users/${username}`).then(({data}) => data);
 }
 
