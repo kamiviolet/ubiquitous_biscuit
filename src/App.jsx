@@ -11,6 +11,7 @@ import './App.css'
 function App() {
   const {theme, setTheme} = useContext(ThemeContext)
   const {allUsers, setAllUsers} = useContext(AllUsersContext)
+  console.log(allUsers)
 
   useEffect(() => {
     fetchAllUsers().then(({users}) => setAllUsers(users))

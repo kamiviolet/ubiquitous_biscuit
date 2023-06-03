@@ -26,7 +26,7 @@ export default function NewCommentForm({article_id, newComment, user, setNewComm
     return (
         <form className="new_comment" role="new_comment_form" onSubmit={handleNewComment}>
             <div className="avatar" role="avatar"><HiUser /></div>
-            <label htmlFor="author" className="author_label required">Username: </label>
+            <label htmlFor="author" className="author_label required">Username: {newComment.user? <></>: <span className="warning">(Please log in to use comment function)</span>}</label>
             <input
                 className="input_field"
                 name="author"

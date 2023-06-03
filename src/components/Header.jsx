@@ -26,7 +26,11 @@ export default function Header() {
             <div className="header_wrapper">
                 <Link to="/">Home</Link>
                 <span> | </span>
-                {(user)? <Link onClick={handleSignout}>Sign out</Link> : 
+                {(user)? <>
+                    <Link onClick={handleSignout}>Sign out</Link>
+                    <span> | </span>
+                    <Link onClick="">My Profile</Link>
+                </> : 
                 <Link to="/login">Log in</Link>}
                 <ToggleTheme />
                 <p>{date}</p>

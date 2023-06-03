@@ -74,7 +74,10 @@ textarea, input {
 
 .required::after {
     content: " * ";
-    color: red;
+}
+
+.warning, .required::after {
+    color: red
 }
 
 .new_comment > button[type="submit"][disabled] {
