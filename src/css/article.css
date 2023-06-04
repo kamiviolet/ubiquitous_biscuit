@@ -17,6 +17,11 @@ article {
     border-block: 1px solid lightgray;
 }
 
+article img {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
 article [role="article_body"] {
     font-size: 1.15em;
     margin-block: 1rem;
@@ -46,10 +51,8 @@ article [role="date"] {
 }
 
 article .stat {
-    margin-block: .5rem;
-    max-width: 200px;
-    align-self: end;
-    
+    margin-block: 1rem;
+    align-self: flex-end;
 }
 
 article .created_data {

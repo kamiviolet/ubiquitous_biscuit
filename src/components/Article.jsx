@@ -26,18 +26,19 @@ export default function Article({article_id}) {
             <article>
                 <PrevPageBtn innerText="Back to the list" />
                 <Subheader title={article.title} />
-                <p className={article.topic + " topics"} role="topic">{article.topic}</p>
-                <p role="article_id">{article.article_id}</p>
+                <img src={article.article_img_url} alt={article.title} />
+                    <p className={article.topic + " topics"} role="topic">{article.topic}</p>
+                    <p role="article_id">{article.article_id}</p>
 
-                <p role="article_body">{article.body}</p>
-                <p className="created_data">
-                    <Link to={"/users/"+article.author} role="author">{article.author}</Link> | 
-                    <span role="date"> {convertDate(article.created_at)}</span>
-                </p>
-                <div className="stat">
-                    <CommentBtn link="#comments" comments={article.comment_count} />
-                    <UpvoteBtn type="article" id={article.article_id} votes={article.votes} />
-                </div>
+                    <p role="article_body">{article.body}</p>
+                    <p className="created_data">
+                        <Link to={"/users/"+article.author} role="author">{article.author}</Link> | 
+                        <span role="date"> {convertDate(article.created_at)}</span>
+                    </p>
+                    <div className="stat">
+                        <CommentBtn link="#comments" comments={article.comment_count} />
+                        <UpvoteBtn type="article" id={article.article_id} votes={article.votes} />
+                    </div>
             </article>
         </>
     )

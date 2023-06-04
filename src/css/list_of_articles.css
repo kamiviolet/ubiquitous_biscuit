@@ -13,8 +13,8 @@
     grid-template-columns: auto max(250px);
     grid-template-rows: auto auto;
     border-bottom: 1px rgb(212, 212, 212) solid;
-    gap: 1rem;
-    padding: 1rem;
+    gap: .5rem;
+    padding: .5em 1rem;
 }
 
 .article_card_wrapper {
@@ -97,18 +97,27 @@
     object-fit: cover;
 }
 
-.stat {
-    font-size: 0.9em;
+.list_of_articles  .stat {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     display: flex;
     justify-content: space-between;
     padding-inline-start: 3em;
     justify-self: start;
+    margin-block-start: 1em;
 }
 
-.stat > * {
-    padding: .6em 1.2em;
+[role="votes"] {
+    background-color: rgb(175, 177, 177);
+    font-size: 0.9em;
+    padding: .5em .75em;
+}
+
+[role="comment_no"] {
+    font-size: 0.9em;
+    padding: .5em .75em;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid gray;
 }
 
 .cooking {

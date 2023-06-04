@@ -24,8 +24,8 @@ export default function Signup() {
             <div className='login_wrapper'>
                 <h1>Ubiquitous Biscuits</h1>
                 <div className='login_container'>
-                <form id="login_form" onSubmit={handleCreateNewUser}>
-                    <label className='username_label required' for="username">Username</label>
+                <form id="registration_form" onSubmit={handleCreateNewUser}>
+                    <label className='username_label required' htmlFor="username">Username</label>
                     <input
                         value={newUser.username}
                         id="username"
@@ -33,7 +33,7 @@ export default function Signup() {
                         onChange={(e)=>setNewUser({...newUser, username: e.target.value})}
                         required
                     />
-                    <label className='name_label required' for="name">Name</label>
+                    <label className='name_label required' htmlFor="name">Name</label>
                     <input
                         value={newUser.name}
                         id="name"
@@ -41,7 +41,7 @@ export default function Signup() {
                         onChange={(e)=>setNewUser({...newUser, name: e.target.value})}
                         required
                     />
-                    <label className='avatar_label' for="avatar">Avatar_url</label>
+                    <label className='avatar_label' htmlFor="avatar">Avatar_url</label>
                     <input
                         value={newUser.avatar_url}
                         id="avatar"

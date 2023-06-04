@@ -36,7 +36,7 @@ export default function Header() {
                 <ToggleTheme />
                 <p>{date}</p>
             </div>
-            <h1>Ubiquitous Biscuits</h1>
+            <Link className="header_banner" to="/"><h1>Ubiquitous Biscuits</h1></Link>
         </header>
     )
 }

@@ -3,8 +3,6 @@ import '../css/filter_sorter.css'
 export default function FilterSorter({total_count, params, setParams}) {
     const {p, limit} = params;
     const totalPage = Math.ceil(total_count / limit);
-    console.log('total_count', total_count)
-    console.log(totalPage)
 
     return (
         <form id="filter_sorter" action="">

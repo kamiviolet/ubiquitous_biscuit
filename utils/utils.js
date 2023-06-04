@@ -42,6 +42,10 @@ export const getUserByUsername = (username) => {
     return ncNewsAPI.get(`/users/${username}`).then(({data}) => data);
 }
 
+export const updateUserByUsername = (user) => {
+    return ncNewsAPI.put(`/users/${user.username}`, {...user}).then(({data}) => data);
+}
+
 export const createNewUser = (newUser) => {
     return ncNewsAPI.post(`/users`, newUser).then(({data}) => data);
 }

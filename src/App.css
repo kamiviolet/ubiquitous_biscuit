@@ -78,8 +78,10 @@ header {
   color: darkorange;
 }
 
-header h1 {
+a.header_banner {
   text-align: left;
+  display: block;
+  max-width: 500px;
 }
 
 header::after {
