@@ -6,7 +6,7 @@ import { CurrentUserProvider } from './contexts/CurrentUser.jsx'
 import { AllUsersProvider } from './contexts/AllUsers.jsx'
 import App from './App.jsx'
 import ErrorPage from './ErrorPage'
-import ListOfAllArticles from '../src/routes/ListOfAllArticles'
+import ListOfArticles from '../src/routes/ListOfArticles'
 import ListOfArticlesByTopic from '../src/routes/ListOfArticlesByTopic'
 import GetArticleByArticleId from '../src/routes/GetArticleByArticleId'
 import GetUserByUsername from './routes/GetUserByUsername.jsx'
@@ -22,11 +22,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <ListOfAllArticles />
+        element: <ListOfArticles />
       },
       {
         path: "/articles",
-        element: <ListOfAllArticles />
+        element: <ListOfArticles />
       },
       {
         path: "/topics/:topic_name",

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { CurrentUserContext } from '../contexts/CurrentUser';
 import PrevPageBtn from '../components/PrevPageBtn';
 import { getUserByUsername } from '../../utils/utils'
+import { HiUser } from "react-icons/hi2";
 import '../css/profile.css'
 
 export default function GetUserByUsername() {
@@ -17,7 +18,11 @@ export default function GetUserByUsername() {
     return (
         <main>
             <div className="user_profile">
-                <img role="avatar" src={userProfile.avatar_url} />
+                {
+                    userProfile.avatar_url
+                    ? <img role="avatar" src={userProfile.avatar_url} />
+                    : <div role="avatar" className='default_avatar'><HiUser /></div>
+                }
                 <div className='profile_wrapper'>
                     <p role="label">Username</p><p>{userProfile.username}</p>
                     <p role="label">Name</p><p>{userProfile.name}</p>

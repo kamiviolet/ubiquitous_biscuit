@@ -16,6 +16,7 @@
     height: 220px;
     object-fit: contain;
     background-color: white;
+    border: 1px solid lightslategray;
 }
 
 .profile_wrapper {
@@ -39,6 +40,17 @@
 
 .profile_wrapper button:hover {
     background-color: rgb(252, 180, 154);
+}
+
+.user_profile .default_avatar {
+    font-size: 10em;
+}
+
+.default_avatar {
+    color: darkslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (min-width: 750px) {

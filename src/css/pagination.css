@@ -1,0 +1,27 @@
+.prev_next, .pagination {
+    font-size: 1.25em;
+}
+
+.prev_next {
+    margin: 3em auto;
+    display: flex;
+    justify-content: space-around;
+    max-width: 200px;
+}
+
+.prev_next span {
+    cursor: pointer;
+    padding: .2em 1em;
+}
+
+.prev_next span:hover {
+    background-color: lightblue;
+}
+
+.dark .prev_next span:hover {
+    color: black;
+}
+
+.pagination {
+    margin-block: 2em;
+  }
