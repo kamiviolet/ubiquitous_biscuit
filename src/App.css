@@ -117,7 +117,16 @@ footer {
 }
 
 .prevPage {
-  text-decoration: underline;
+  cursor: pointer;
+  background-color: rgb(206, 204, 204);
+  color: black;
+  display: inline-block;
+  width: max-content;
+  padding: .25em .4em;
+}
+
+.prevPage:hover {
+  background-color: lightblue;
 }
 
 @media screen and (min-width: 750px) {

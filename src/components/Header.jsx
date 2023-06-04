@@ -17,6 +17,7 @@ export default function Header() {
         const signoutConfirmation = confirm('Are you sure to sign out?');
         if (signoutConfirmation) {
             setCurrentUser({username: "", name: "", avatar_url: ""})
+            localStorage.clear();
             alert('Now you have successfully signed out.')
         }
     }

@@ -1,14 +1,13 @@
-import Subheader from "../components/Subheader";
-import { convertDate } from "../../utils/utils"
 import { useEffect, useState } from "react";
-import { fetchArticleByArticleId } from '../../utils/utils'
+import { fetchArticleByArticleId, convertDate } from '../../utils/utils'
+import Subheader from "../components/Subheader";
 import UpvoteBtn from "../components/UpvoteBtn"
 import CommentBtn from "../components/CommentBtn"
-import { Link, useNavigate } from "react-router-dom";
+import PrevPageBtn from "./PrevPageBtn";
+import { Link } from "react-router-dom";
 
 
 export default function Article({article_id}) {
-    const navigate = useNavigate();
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
@@ -25,7 +24,7 @@ export default function Article({article_id}) {
     return (
         <>
             <article>
-                <Link className="prevPage" onClick={()=>navigate(-1)}>Back to the list</Link>
+                <PrevPageBtn innerText="Back to the list" />
                 <Subheader title={article.title} />
                 <p className={article.topic + " topics"} role="topic">{article.topic}</p>
                 <p role="article_id">{article.article_id}</p>

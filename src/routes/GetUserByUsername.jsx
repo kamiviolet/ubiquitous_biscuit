@@ -1,6 +1,7 @@
-import { CurrentUserContext } from '../contexts/CurrentUser';
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { CurrentUserContext } from '../contexts/CurrentUser';
+import PrevPageBtn from '../components/PrevPageBtn';
 import { getUserByUsername } from '../../utils/utils'
 import '../css/profile.css'
 
@@ -23,6 +24,7 @@ export default function GetUserByUsername() {
                     {currentUser.username === username ? <button>Edit profile</button> : <></>}
                 </div>
             </div>
+            <PrevPageBtn innerText="Return to previous page" />
         </main>
     )
     
