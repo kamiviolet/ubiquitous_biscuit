@@ -1,0 +1,26 @@
+#post_article_page {
+    border-block: 1px solid rgb(231, 231, 231);
+    background-color: whitesmoke;
+    width: 100%;
+    min-height: 30vh;
+    padding: 3.5em 1em;
+    text-align: left;
+}
+
+#post_article_page h2 {
+    padding-block: unset;
+}
+
+.post_article_wrapper {
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+#post_article_form {
+    margin-block: 1em;
+}
+
+#post_article_form > * {
+    display: block;
+    margin-block: .75em;
+}

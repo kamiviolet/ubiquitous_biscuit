@@ -6,11 +6,12 @@ import { CurrentUserProvider } from './contexts/CurrentUser.jsx'
 import { AllUsersProvider } from './contexts/AllUsers.jsx'
 import App from './App.jsx'
 import ErrorPage from './ErrorPage'
-import ListOfArticles from '../src/routes/ListOfArticles'
-import ListOfArticlesByTopic from '../src/routes/ListOfArticlesByTopic'
-import GetArticleByArticleId from '../src/routes/GetArticleByArticleId'
+import ListOfArticles from './routes/ListOfArticles'
+import ListOfArticlesByTopic from './routes/ListOfArticlesByTopic'
+import GetArticleByArticleId from './routes/GetArticleByArticleId'
 import GetUserByUsername from './routes/GetUserByUsername.jsx'
-import Login from '../src/routes/Login'
+import PostArticle from './routes/PostArticle.jsx'
+import Login from './routes/Login'
 import Signup from './routes/Signup.jsx'
 import './index.css'
 
@@ -29,12 +30,16 @@ const router = createBrowserRouter([
         element: <ListOfArticles />
       },
       {
-        path: "/topics/:topic_name",
-        element: <ListOfArticlesByTopic />
+        path: "/articles/post",
+        element: <PostArticle />
       },
       {
         path: "/articles/:article_id",
         element: <GetArticleByArticleId />
+      },
+      {
+        path: "/topics/:topic_name",
+        element: <ListOfArticlesByTopic />
       },
       {
         path: "/users/:username",

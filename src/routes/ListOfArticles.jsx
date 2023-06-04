@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import FilterSorter from '../components/FilterSorter'
 import ArticleSummary from '../components/ArticleSummary'
 import Pagination from '../components/Pagination'
+import PostArticle from '../routes/PostArticle'
 import { getAllArticles } from '../../utils/utils'
 import '../css/list_of_articles.css'
 
@@ -48,6 +49,7 @@ export default function ListOfArticles({topic}) {
                 params={params}
                 setParams={setParams}
             />
+            <PostArticle />
         </main>
     )
 }
