@@ -26,6 +26,10 @@ export const updateVotesByArticleId = (id, inc_votes) => {
     return ncNewsAPI.patch(`/articles/${id}`, { inc_votes }).then(({data}) => data);
 }
 
+export const postNewArticle = (newArticle) => {
+    return ncNewsAPI.post('/articles/', newArticle).then(({data}) => data);
+}
+
 export const updateVotesByCommentId = (id, inc_votes) => {
     return ncNewsAPI.patch(`/comments/${id}`, { inc_votes }).then(({data}) => data);
 }

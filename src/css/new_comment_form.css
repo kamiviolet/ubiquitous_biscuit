@@ -29,7 +29,7 @@
     justify-self: left;
 }
 
-#author {
+.author {
     grid-row: 2/3;
     grid-column: 2/span 2;
     justify-self: first baseline;
@@ -46,12 +46,6 @@
 .new_comment textarea {
     grid-row: 4/ 6;
     grid-column: 2/ span 2;
-    resize: none;
-    margin-inline-end: 1rem;
-    justify-self: stretch;
-    align-self: stretch;
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .new_comment > button[type="submit"] {
@@ -64,12 +58,6 @@
     font-size: .85em;
     height:fit-content;
     max-width: 120px;
-}
-
-textarea, input {
-    padding: .6em 1.2em;
-    border-radius: 10px;
-    border: 1px solid lightslategrey;
 }
 
 .required::after {

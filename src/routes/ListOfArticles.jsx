@@ -24,7 +24,6 @@ export default function ListOfArticles({topic}) {
     if (isLoading) {
         return  <div className='loading_page'>Loading...<br />Thank you for your patience.</div>
     }
-
     return (
         <main>
             <FilterSorter
@@ -49,7 +48,7 @@ export default function ListOfArticles({topic}) {
                 params={params}
                 setParams={setParams}
             />
-            <PostArticle />
+            <PostArticle topic={topic} listOfArticles={listOfArticles} setListOfArticles={setListOfArticles} />
         </main>
     )
 }

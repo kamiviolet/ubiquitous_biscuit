@@ -7,6 +7,10 @@
     text-align: left;
 }
 
+.dark #post_article_page {
+    background-color: dimgray;
+}
+
 #post_article_page h2 {
     padding-block: unset;
 }
@@ -18,9 +22,49 @@
 
 #post_article_form {
     margin-block: 1em;
+    display: grid;
+    gap: 1.5em;
 }
 
 #post_article_form > * {
-    display: block;
-    margin-block: .75em;
+    grid-row: unset;
+    grid-column: unset;
+}
+
+#post_article_form select{
+    padding: .75em 0.5em;
+}
+
+#post_article_form input,
+#post_article_form textarea {
+    padding-inline: 0.5em;
+}
+
+#post_article_form textarea {
+    width: 100%;
+    word-break: break-all;
+    min-height: 250px;
+}
+
+#post_article_form .article_img {
+    height: min-content;
+}
+
+#post_article_form button[type="submit"] {
+    width: 200px;
+    justify-self: center;
+    background-color: rgb(61, 83, 180);
+    color: white
+}
+
+@media screen and (min-width: 750px) {
+    #post_article_form {
+        grid-template-columns: max(200px) auto;
+        grid-template-rows: auto auto auto auto;
+        gap: 2em;
+    }
+
+    #post_article_form button[type="submit"] {
+        grid-column: 1/3;
+    }
 }

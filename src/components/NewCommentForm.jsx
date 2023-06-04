@@ -29,7 +29,7 @@ export default function NewCommentForm({article_id, newComment, user, setNewComm
             <label htmlFor="author" className="author_label required">
                 Username: {newComment.username === "" ? <span className="warning">(Please log in to use comment function)</span> : <></>}</label>
             <input
-                className="input_field"
+                className="input_field author"
                 name="author"
                 id="author"
                 type="text"
@@ -38,7 +38,7 @@ export default function NewCommentForm({article_id, newComment, user, setNewComm
             />
             <label htmlFor="comment" className="comment_label required" >Comment: </label>
             <textarea
-                className="input_field"
+                className="input_field comment_body"
                 value={newComment.body}
                 onChange={(e)=> setNewComment({...newComment, body: e.target.value})}
                 id="comment"

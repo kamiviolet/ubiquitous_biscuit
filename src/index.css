@@ -16,6 +16,16 @@
   -webkit-text-size-adjust: 100%;
 }
 
+textarea, input {
+  padding: .6em 1.2em;
+  border-radius: 5px;
+  border: 1px solid lightslategrey;
+}
+
+img {
+  image-rendering: optimizeSpeed;
+}
+
 a {
   font-weight: 800;
   text-decoration: inherit;
