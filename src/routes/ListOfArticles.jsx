@@ -6,6 +6,7 @@ import Pagination from '../components/Pagination'
 import PostArticle from '../routes/PostArticle'
 import { getAllArticles } from '../../utils/utils'
 import '../css/list_of_articles.css'
+import { v4 } from 'uuid'
 
 export default function ListOfArticles({topic}) {
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
@@ -13,7 +14,7 @@ export default function ListOfArticles({topic}) {
     const [totalCountOfArticles, setTotalCountOfArticles] = useState(0);
     const [params, setParams] = useState({sort_by: "created_at", order: "desc", p: 1, limit: 10})
     const [isLoading, setIsLoading] = useState(true)
-
+   
     useEffect(() => {
         getAllArticles(topic, params)
             .then(({articles, total_count}) => {
@@ -38,7 +39,7 @@ export default function ListOfArticles({topic}) {
                     (!listOfArticles) ? <></>
                     : listOfArticles.map(article => {
                         return (
-                            <li key={"article_" + article.article_id} className='article_card'>
+                            <li key={v4()} className='article_card'>
                                 <ArticleSummary
                                     topic={topic}
                                     article={article}

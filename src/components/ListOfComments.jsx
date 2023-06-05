@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function listOfComments({currentUser, listOfComments, setListOfComments}) {
     const deleteComment = (e) => {
-        deleteCommentByCommentId(+e.target.value)
+        deleteCommentByCommentId(e.target.value)
             .then(()=> {
                 setListOfComments((listOfComments)=>{
                     return listOfComments.filter(comment=>comment.comment_id !== +e.target.value)

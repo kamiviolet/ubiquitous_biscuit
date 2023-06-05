@@ -35,6 +35,10 @@
     padding: .75em 0.5em;
 }
 
+#post_article_form label{
+    width: 100%;
+}
+
 #post_article_form input,
 #post_article_form textarea {
     padding-inline: 0.5em;

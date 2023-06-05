@@ -13,7 +13,7 @@ function App() {
   const { theme, setTheme } = useContext(ThemeContext)
   const { allUsers, setAllUsers } = useContext(AllUsersContext)
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
-
+  
   useEffect(() => {
     const loggedIn = localStorage.getItem('user');
 

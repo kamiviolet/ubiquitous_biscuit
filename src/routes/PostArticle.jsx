@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Subheader from '../components/Subheader'
 import { getAllTopics, postNewArticle } from '../../utils/utils'
 import '../css/post_article_form.css'
+import { v4 } from 'uuid'
 
 export default function PostArticle({currentUser, listOfArticles, setListOfArticles, topic}) {
     const [alltopics, setAllTopics] = useState([]);
@@ -25,7 +26,6 @@ export default function PostArticle({currentUser, listOfArticles, setListOfArtic
 
         postNewArticle(newArticle)
             .then(({article})=>{
-                console.log(article)
                 if (article.topic === topic) {
                     setListOfArticles([article, ...listOfArticles])
                 }
@@ -65,12 +65,10 @@ export default function PostArticle({currentUser, listOfArticles, setListOfArtic
                         className="topic"
                         disabled={isLoading? true: false}
                     >
-                        <option value=""></option>
+                        <option></option>
                         {alltopics.map(topic => {
                             return (
-                                <>
-                                    <option value={topic.slug}>{topic.slug[0].toUpperCase()+topic.slug.substring(1)}</option>
-                                </>
+                                <option key={v4()} value={topic.slug}>{topic.slug[0].toUpperCase()+topic.slug.substring(1)}</option>
                             )
                         })}
                     </select>
@@ -114,11 +112,3 @@ export default function PostArticle({currentUser, listOfArticles, setListOfArtic
         </div>
     )
 }
-
-/* 
-...article
-article_id
-votes
-created_at
-comment_count
- */

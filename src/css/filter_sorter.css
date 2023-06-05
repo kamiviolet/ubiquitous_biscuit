@@ -19,7 +19,7 @@
     background-color: white;
 }
 
-#filter_sorter button[type="submit"] {
+#filter_sorter button {
     border: 1px slategray solid;
     border-radius: 0;
 } 

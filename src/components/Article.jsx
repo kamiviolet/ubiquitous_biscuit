@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { fetchArticleByArticleId, convertDate } from '../../utils/utils'
+import { fetchArticleByArticleId, deleteArticleByArticleId, convertDate } from '../../utils/utils'
 import Subheader from "../components/Subheader";
 import UpvoteBtn from "../components/UpvoteBtn"
 import CommentBtn from "../components/CommentBtn"
 import PrevPageBtn from "./PrevPageBtn";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Article({currentUser, article_id}) {
+    const navigate = useNavigate()
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
@@ -18,19 +19,23 @@ export default function Article({currentUser, article_id}) {
     }, [])
 
     const deleteArticle = (e) => {
-        deleteArticleByArticleId(+e.target.value)
-            .then(()=> {
-                setListOfArticles((listOfArticles)=>{
-                    return listOfArticles.filter(article=>article.article_id !== +e.target.value)
-                })
+        deleteArticleByArticleId(e.target.value)
+            .then((d)=>{
+                if (d.status === 204) {
+                    alert(`The article has been deleted successfully.`)
+                } else {
+                    alert(`Sorry, please try again.`)
+                }
             })
-            .then(()=>alert(`The article has been deleted successfully.`))
+            .then(()=> {
+                navigate('/')
+            })
     }
     
     if (isLoading) {
         return  <div className='loading_page'>Loading...<br />Don't worry, it may take some time. Thank you for your patience.</div>
     }
-    console.log(article)
+
     return (
         <>
             <article>

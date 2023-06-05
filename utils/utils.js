@@ -27,7 +27,7 @@ export const updateVotesByArticleId = (id, inc_votes) => {
 }
 
 export const deleteArticleByArticleId = (id) => {
-    return ncNewsAPI.delete(`/articles/${id}`);
+    return ncNewsAPI.delete(`/articles/${id}`).then((d)=>d);
 }
 
 export const postNewArticle = (newArticle) => {
@@ -62,7 +62,7 @@ export const createNewUser = (newUser) => {
 }
 
 export const deleteCommentByCommentId = (comment_id) => {
-    return ncNewsAPI.delete(`/comments/${comment_id}`)
+    return ncNewsAPI.delete(`/comments/${comment_id}`).then((d)=>d);
 }
 
 export const convertDate = (datestamp) => {
