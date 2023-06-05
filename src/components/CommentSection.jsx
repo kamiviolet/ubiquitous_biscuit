@@ -1,13 +1,11 @@
 import '../css/list_of_comments.css'
 import { fetchCommentsByArticleId } from '../../utils/utils'
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ListOfComments from '../components/ListOfComments'
 import NewCommentForm from '../components/NewCommentForm'
-import { CurrentUserContext } from '../contexts/CurrentUser';
 
 
-export default function CommentSection({article_id}) {
-    const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+export default function CommentSection({currentUser, article_id}) {
     const [listOfComments, setListOfComments] = useState([]);
     const [newComment, setNewComment] = useState({
         username: currentUser.username,
@@ -36,7 +34,7 @@ export default function CommentSection({article_id}) {
                 setListOfComments={setListOfComments}
             />
             <ListOfComments
-                currentUser={currentUser.username}
+                currentUser={currentUser}
                 listOfComments={listOfComments}
                 setListOfComments={setListOfComments}
             />

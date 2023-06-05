@@ -18,7 +18,9 @@ article {
 }
 
 article img {
-    max-width: 500px;
+    width: 500px;
+    height: 350px;
+    object-fit: cover;
     margin: 50px auto;
 }
 
@@ -48,6 +50,10 @@ article [role="author"] {
 article [role="author"],
 article [role="date"] {
     margin-inline: .75em;
+}
+
+[role="delete"] {
+    display: inline-block
 }
 
 article .stat {

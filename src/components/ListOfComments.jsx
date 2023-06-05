@@ -27,7 +27,7 @@ export default function listOfComments({currentUser, listOfComments, setListOfCo
                             <Link to={"/users/"+comment.author} role="author" aria-roledescription="author">{comment.author}</Link>
                             <p role="date" aria-roledescription="created_at">{convertDate(comment.created_at)}</p>
                             <UpvoteBtn role="vote" type="comment" id={comment.comment_id} votes={comment.votes} />
-                            {currentUser === comment.author? <div role="delete"><button value={comment.comment_id} onClick={(e)=>deleteComment(e)}> X </button></div> : <></>}
+                            {currentUser.username === comment.author? <div role="delete"><button value={comment.comment_id} onClick={(e)=>deleteComment(e)}> X </button></div> : <></>}
                         </li>
                     )
                 })}

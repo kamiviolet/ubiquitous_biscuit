@@ -1,8 +1,20 @@
 import { Link } from 'react-router-dom'
 import UpvoteBtn from "../components/UpvoteBtn"
 import CommentBtn from "../components/CommentBtn"
+import { deleteArticleByArticleId } from '../../utils/utils'
 
-export default function ArticleSummary({topic, article}) {
+export default function ArticleSummary({topic, article, currentUser, setListOfArticles}) {
+
+    const deleteArticle = (e) => {
+        deleteArticleByArticleId(+e.target.value)
+            .then(()=> {
+                setListOfArticles((listOfArticles)=>{
+                    return listOfArticles.filter(article=>article.article_id !== +e.target.value)
+                })
+            })
+            .then(()=>alert(`The article has been deleted successfully.`))
+    }
+    
     return (
         <>
             <Link className='article_card_wrapper' to={topic? "../../articles/"+article.article_id : "articles/"+article.article_id}>
@@ -12,13 +24,19 @@ export default function ArticleSummary({topic, article}) {
                 <p role="date" aria-roledescription="created_at">{article.created_at}</p>
                 <p className={article.topic + " topics"}  role="topic" aria-roledescription="under_topic">{article.topic}</p>
             </Link>
-            <Link role="article_img" to={topic? "../../articles/"+article.article_id : "articles/"+article.article_id}>
-                <img src={article.article_img_url} alt={article.title} />
+            <Link role="article_img_container" to={topic? "../../articles/"+article.article_id : "articles/"+article.article_id}>
+                <img className='article_img' src={article.article_img_url} alt={article.title} />
             </Link>
 
             <div className="stat">
                 <CommentBtn link={"/articles/"+article.article_id+"#comments"} comments={article.comment_count} />
-                <UpvoteBtn type="article" id={article.article_id} votes={article.votes} />            </div>
+                <UpvoteBtn type="article" id={article.article_id} votes={article.votes} />
+                {
+                    currentUser.username === article.author
+                    ? <div role="delete"><button value={article.article_id} onClick={(e)=>deleteArticle(e)}> X </button></div>
+                    : <></>
+                }
+            </div>
         </>
     )
 }

@@ -7,7 +7,7 @@ import PrevPageBtn from "./PrevPageBtn";
 import { Link } from "react-router-dom";
 
 
-export default function Article({article_id}) {
+export default function Article({currentUser, article_id}) {
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
@@ -17,10 +17,20 @@ export default function Article({article_id}) {
             .then(()=>setIsLoading(false))
     }, [])
 
+    const deleteArticle = (e) => {
+        deleteArticleByArticleId(+e.target.value)
+            .then(()=> {
+                setListOfArticles((listOfArticles)=>{
+                    return listOfArticles.filter(article=>article.article_id !== +e.target.value)
+                })
+            })
+            .then(()=>alert(`The article has been deleted successfully.`))
+    }
+    
     if (isLoading) {
         return  <div className='loading_page'>Loading...<br />Don't worry, it may take some time. Thank you for your patience.</div>
     }
-
+    console.log(article)
     return (
         <>
             <article>
@@ -36,6 +46,11 @@ export default function Article({article_id}) {
                         <span role="date"> {convertDate(article.created_at)}</span>
                     </p>
                     <div className="stat">
+                    {
+                        currentUser.username === article.author
+                        ? <div role="delete"><button value={article.article_id} onClick={(e)=>deleteArticle(e)}> X </button></div>
+                        : <></>
+                    }
                         <CommentBtn link="#comments" comments={article.comment_count} />
                         <UpvoteBtn type="article" id={article.article_id} votes={article.votes} />
                     </div>

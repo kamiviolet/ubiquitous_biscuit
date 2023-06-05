@@ -1,11 +1,9 @@
-import { useEffect, useState, useContext } from 'react';
-import { CurrentUserContext } from '../contexts/CurrentUser';
+import { useEffect, useState } from 'react'
 import Subheader from '../components/Subheader'
 import { getAllTopics, postNewArticle } from '../../utils/utils'
 import '../css/post_article_form.css'
 
-export default function PostArticle({listOfArticles, setListOfArticles, topic}) {
-    const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
+export default function PostArticle({currentUser, listOfArticles, setListOfArticles, topic}) {
     const [alltopics, setAllTopics] = useState([]);
     const [newArticle, setNewArticle] = useState({
         author: currentUser.username,
@@ -22,10 +20,12 @@ export default function PostArticle({listOfArticles, setListOfArticles, topic}) 
 
     const handlePostArticle = (e) => {
         e.preventDefault();
-        console.log(newArticle)
+        
         setIsLoading(true)
+
         postNewArticle(newArticle)
             .then(({article})=>{
+                console.log(article)
                 if (article.topic === topic) {
                     setListOfArticles([article, ...listOfArticles])
                 }
@@ -37,7 +37,10 @@ export default function PostArticle({listOfArticles, setListOfArticles, topic}) 
                 body: "",
                 article_img_url: ""
             }))
-            .then(()=>setIsLoading(false))
+            .then(()=>{
+                setIsLoading(false)
+                window.scrollTo(0, 0)
+            })
     }
 
     return (

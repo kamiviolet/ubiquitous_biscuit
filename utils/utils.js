@@ -26,7 +26,14 @@ export const updateVotesByArticleId = (id, inc_votes) => {
     return ncNewsAPI.patch(`/articles/${id}`, { inc_votes }).then(({data}) => data);
 }
 
+export const deleteArticleByArticleId = (id) => {
+    return ncNewsAPI.delete(`/articles/${id}`);
+}
+
 export const postNewArticle = (newArticle) => {
+    if (newArticle.article_img_url === "") {
+        newArticle.article_img_url = "/default_illustration.jpg";
+    }
     return ncNewsAPI.post('/articles/', newArticle).then(({data}) => data);
 }
 

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { CurrentUserContext } from '../contexts/CurrentUser';
 import FilterSorter from '../components/FilterSorter'
 import ArticleSummary from '../components/ArticleSummary'
 import Pagination from '../components/Pagination'
@@ -7,6 +8,7 @@ import { getAllArticles } from '../../utils/utils'
 import '../css/list_of_articles.css'
 
 export default function ListOfArticles({topic}) {
+    const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
     const [listOfArticles, setListOfArticles] = useState([]);
     const [totalCountOfArticles, setTotalCountOfArticles] = useState(0);
     const [params, setParams] = useState({sort_by: "created_at", order: "desc", p: 1, limit: 10})
@@ -37,7 +39,12 @@ export default function ListOfArticles({topic}) {
                     : listOfArticles.map(article => {
                         return (
                             <li key={"article_" + article.article_id} className='article_card'>
-                                <ArticleSummary topic={topic} article={article}/>
+                                <ArticleSummary
+                                    topic={topic}
+                                    article={article}
+                                    setListOfArticles={setListOfArticles}
+                                    currentUser={currentUser}
+                                />
                             </li>
                         )
                     })
@@ -48,7 +55,12 @@ export default function ListOfArticles({topic}) {
                 params={params}
                 setParams={setParams}
             />
-            <PostArticle topic={topic} listOfArticles={listOfArticles} setListOfArticles={setListOfArticles} />
+            <PostArticle
+                currentUser={currentUser}
+                topic={topic}
+                listOfArticles={listOfArticles}
+                setListOfArticles={setListOfArticles}
+            />
         </main>
     )
 }

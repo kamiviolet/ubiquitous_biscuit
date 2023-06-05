@@ -1,8 +1,16 @@
 import '../css/filter_sorter.css'
+import { useState } from 'react';
 
 export default function FilterSorter({total_count, params, setParams}) {
     const {p, limit} = params;
+    const [sort, setSort] = useState("");
+    const [order, setOrder] = useState("");
     const totalPage = Math.ceil(total_count / limit);
+
+    const handleFilter = (e) => {
+        e.preventDefault();
+
+    }
 
     return (
         <form id="filter_sorter" action="">
