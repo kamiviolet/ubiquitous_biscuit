@@ -1,7 +1,7 @@
 # Ubiquitous Biscuit
 
 ## Purpose
-Ubiquitous Biscuit (aka NC news) is a full-stack project inspired by Reddit or Quora which I created during the course of Northcoders software engineering bootcamp to demonstrate what I have learnt.
+Ubiquitous Biscuit (aka NC news) is a full-stack project inspired by Reddit or Quora which I created during the course of Northcoders software engineering bootcamp to demonstrate what I have learnt. This project is still in development and all updates will be announced in github.
 
 The deployed version: https://ubiquitous-biscuit.netlify.app/
 
@@ -34,3 +34,22 @@ Instead of the deployed version abovementioned, you may want to follow the steps
 
 ## Required environment
 The app is built with Node.js version 20 but has been tested to run in Node.js version 14. Yet, it is highly recommended to run it in the most updated version of Node.
+
+## Core Features
+- View a list of articles
+- View a list of articles under a particular topic
+- Vote an existing article
+- Leave comment to an existing article
+- Create your own account, i.e. sign up function
+- Log in to own account
+- View profile of members
+- Update account information in own profile
+- Post a new article if logged in
+- Delete own article(s) or comment(s) 
+- Sort a list of article by date / comment count / votes, in either ascending / descending order
+
+## Features to be added
+- Edit own article(s) or comment(s)
+- Deactivate your membership
+- Enable admin to add new topic
+- Allow members to bookmark their favorite articles
