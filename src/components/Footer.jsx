@@ -3,7 +3,7 @@ export default function Footer() {
         <footer>
             Created for Northcoders Bootcamp FE-project, 2023.
             <br/>
-            Ubiquitous Biscuits
+            Ubiquitous Biscuit
         </footer>
     )
 }
